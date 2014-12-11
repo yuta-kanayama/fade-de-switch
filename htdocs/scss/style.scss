@@ -1,0 +1,55 @@
+@import "compass",
+        "compass/reset";
+
+#fade-de-switch {
+  position: relative;
+  background: #000;
+}
+
+#fade-de-switch__inner {
+  $height: 380px;
+  overflow: hidden;
+  position: relative;
+  width: 320px;
+  height: $height;
+  margin: 0 auto;
+  .is-none {
+    display: none !important;
+  }
+  .pointer {
+    @include inline-block;
+    width: 12px;
+    height: 12px;
+    margin: 0 6px;
+    background-color: #999;
+    border-radius: 6px;
+    cursor: pointer;
+    line-height: 0;
+    font-size: 0;
+    &.is-active {
+      background-color: #000;
+    }
+  }
+  .pointers {
+    display: none;
+    position: absolute;
+    bottom: 15px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 1;
+  }
+  .item {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 320px;
+    height: $height;
+    color: #fff;
+    background-color: #333;
+  }
+}
+
+
+
