@@ -6,11 +6,9 @@
 }
 
 #fade-de-switch__inner {
-  $height: 380px;
   overflow: hidden;
   position: relative;
   width: 320px;
-  height: $height;
   margin: 0 auto;
   .is-none {
     display: none !important;
@@ -23,6 +21,7 @@
     background-color: #999;
     border-radius: 6px;
     cursor: pointer;
+    opacity: .7;
     line-height: 0;
     font-size: 0;
     &.is-active {
@@ -44,7 +43,6 @@
     top: 0;
     left: 0;
     width: 320px;
-    height: $height;
     color: #fff;
     background-color: #333;
   }

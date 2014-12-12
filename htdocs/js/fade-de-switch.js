@@ -7,7 +7,7 @@ FadeDeSwitch.prototype = {
   init: function(opt) {
     var self = this;
     self.prm = {
-      wrapper: '#fade-de-switch',
+      wrapper: '#fade-de-switch__inner',
       item: '.item',
       pointers: '.pointers',
       duration: 5000
@@ -75,6 +75,10 @@ FadeDeSwitch.prototype = {
       //self.listFS.moveToPoint(self.count);
       return false;
     });
+    
+    $(window).load(function(){
+      self.setHeight();
+    });
   },
   
   
@@ -132,6 +136,21 @@ FadeDeSwitch.prototype = {
     
     result = ( count )? Number( count ) : 0 ;
     return result;
+  },
+  
+  
+  setHeight: function() {
+    var self = this,
+        maxHeight = 0;
+    
+    self.$item.each(function(){
+      var $me = $(this),
+          $img = $me.find('img');
+          height = $img.height();
+      maxHeight = Math.max( height, maxHeight );
+    });
+    
+    self.$wrapper.height( maxHeight );
   }
   
 }
