@@ -11,7 +11,7 @@
     width: 12px;
     height: 12px;
     margin: 0 6px;
-    background-color: #999;
+    background-color: #fff;
     border-radius: 6px;
     cursor: pointer;
     opacity: .7;
@@ -22,13 +22,13 @@
     }
   }
   .pointers {
-    display: none;
     position: absolute;
     bottom: 15px;
     left: 0;
     width: 100%;
     text-align: center;
     z-index: 1;
+    @include user-select(none);
   }
   .item {
     display: none;
@@ -38,6 +38,15 @@
     width: 320px;
     color: #fff;
     background-color: #333;
+    .num {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: .5em .8em;
+      color: #f00;
+      background-color: rgba(255,255,255,.7);
+    }
   }
   .container {
     overflow: hidden;

@@ -11,7 +11,8 @@ FadeDeSwitch.prototype = {
       container: '.container',
       item: '.item',
       pointers: '.pointers',
-      duration: 5000
+      interval: 5000,
+      duration: 1400
     }
     $.extend( self.prm, opt );
     
@@ -19,11 +20,11 @@ FadeDeSwitch.prototype = {
     self.$container = self.$wrapper.find( self.prm.container );
     self.$item = self.$container.find( self.prm.item );
     
+    self.interval = self.prm.interval;
     self.duration = self.prm.duration;
     self.count_min = 0;
     self.count_max = self.$item.length - 1;
     self.timer;
-    self.once = false;
     self.count = self.getCookieCount();
     self._count = -1;
     
@@ -40,13 +41,9 @@ FadeDeSwitch.prototype = {
     self.$pointer.eq( self.count ).addClass('is-active');
     self._count = self.count;
     
-    if( self.count ) {
-      self.$pointers.css('display', 'block');
-    }
-    
     self.timer = setTimeout(
       $.proxy( self.ignition, self ),
-      self.duration - 1000
+      self.interval - 1000
     );
     
     self.setEvent();
@@ -61,8 +58,7 @@ FadeDeSwitch.prototype = {
     });
     
     self.$pointer.click(function(){
-      self.count = self.$pointer.index(this);
-      self.count--;
+      self.count = self.$pointer.index(this) - 1;
       self.ignition();
       //self.listFS.moveToPoint(self.count);
       return false;
@@ -78,8 +74,10 @@ FadeDeSwitch.prototype = {
     var self = this;
     self.$pointers = self.$wrapper.find( self.prm.pointers );
     (function(){
-      var str = '<span class="pointer is-none"></span>';
-      for(var i=0,len=self.count_max; i<len; i++){
+      //var str = '<span class="pointer is-none"></span>';
+      var str = '';
+      var len = self.count_max;
+      for( var i = 0; i <= len; i++ ) {
         str += '<span class="pointer"></span>';
       }
       self.$pointers.html(str);
@@ -105,21 +103,16 @@ FadeDeSwitch.prototype = {
   animation: function() {
     var self = this;
     if( self._count == self.count ) return false;
-    //console.log( 'animation', self.count, self._count );
+    //console.log('animation', self.count, self._count );
     
     clearTimeout( self.timer );
     
-    if( !self.once ) {
-      self.$pointers.css('display', 'block');
-      self.once = true;
-    }
-    
     if( -1 != self._count ) {
-      self.$item.eq( self._count ).stop(true,false).fadeOut( 1400 );
+      self.$item.eq( self._count ).stop(true,false).fadeOut( self.duration );
       self.$pointer.eq( self._count ).removeClass('is-active');
     }
     
-    self.$item.eq( self.count ).stop(true,false).fadeIn( 1400 );
+    self.$item.eq( self.count ).stop(true,false).fadeIn( self.duration );
     self.$pointer.eq( self.count ).addClass('is-active');
     
     self._count = self.count;
@@ -129,7 +122,7 @@ FadeDeSwitch.prototype = {
     
     self.timer = setTimeout(
       $.proxy( self.ignition, self ),
-      self.duration
+      self.interval
     );
   },
   

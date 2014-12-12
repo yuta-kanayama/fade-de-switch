@@ -14,7 +14,7 @@
   width: 12px;
   height: 12px;
   margin: 0 6px;
-  background-color: #999;
+  background-color: #fff;
   border-radius: 6px;
   cursor: pointer;
   opacity: .7;
@@ -25,13 +25,16 @@
   background-color: #000;
 }
 #fade-de-switch .pointers {
-  display: none;
   position: absolute;
   bottom: 15px;
   left: 0;
   width: 100%;
   text-align: center;
   z-index: 1;
+  -moz-user-select: -moz-none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 #fade-de-switch .item {
   display: none;
@@ -41,6 +44,15 @@
   width: 320px;
   color: #fff;
   background-color: #333;
+}
+#fade-de-switch .item .num {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: .5em .8em;
+  color: #f00;
+  background-color: rgba(255, 255, 255, 0.7);
 }
 #fade-de-switch .container {
   overflow: hidden;
