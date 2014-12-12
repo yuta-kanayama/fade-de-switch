@@ -2,17 +2,10 @@
   position: relative;
   background: #000;
 }
-
-#fade-de-switch__inner {
-  overflow: hidden;
-  position: relative;
-  width: 320px;
-  margin: 0 auto;
-}
-#fade-de-switch__inner .is-none {
+#fade-de-switch .is-none {
   display: none !important;
 }
-#fade-de-switch__inner .pointer {
+#fade-de-switch .pointer {
   display: inline-block;
   vertical-align: middle;
   *vertical-align: auto;
@@ -28,10 +21,10 @@
   line-height: 0;
   font-size: 0;
 }
-#fade-de-switch__inner .pointer.is-active {
+#fade-de-switch .pointer.is-active {
   background-color: #000;
 }
-#fade-de-switch__inner .pointers {
+#fade-de-switch .pointers {
   display: none;
   position: absolute;
   bottom: 15px;
@@ -40,7 +33,7 @@
   text-align: center;
   z-index: 1;
 }
-#fade-de-switch__inner .item {
+#fade-de-switch .item {
   display: none;
   position: absolute;
   top: 0;
@@ -48,4 +41,10 @@
   width: 320px;
   color: #fff;
   background-color: #333;
+}
+#fade-de-switch .container {
+  overflow: hidden;
+  position: relative;
+  width: 320px;
+  margin: 0 auto;
 }

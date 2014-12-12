@@ -3,13 +3,6 @@
 #fade-de-switch {
   position: relative;
   background: #000;
-}
-
-#fade-de-switch__inner {
-  overflow: hidden;
-  position: relative;
-  width: 320px;
-  margin: 0 auto;
   .is-none {
     display: none !important;
   }
@@ -46,7 +39,10 @@
     color: #fff;
     background-color: #333;
   }
+  .container {
+    overflow: hidden;
+    position: relative;
+    width: 320px;
+    margin: 0 auto;
+  }
 }
-
-
-
