@@ -1,1 +1,52 @@
-html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font:inherit;font-size:100%;vertical-align:baseline}html{line-height:1}ol,ul{list-style:none}table{border-collapse:collapse;border-spacing:0}caption,th,td{text-align:left;font-weight:normal;vertical-align:middle}q,blockquote{quotes:none}q:before,q:after,blockquote:before,blockquote:after{content:"";content:none}a img{border:none}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{display:block}#fade-de-switch{position:relative;background:#000}#fade-de-switch__inner{overflow:hidden;position:relative;width:320px;height:380px;margin:0 auto}#fade-de-switch__inner .is-none{display:none !important}#fade-de-switch__inner .pointer{display:inline-block;vertical-align:middle;*vertical-align:auto;*zoom:1;*display:inline;width:12px;height:12px;margin:0 6px;background-color:#999;border-radius:6px;cursor:pointer;line-height:0;font-size:0}#fade-de-switch__inner .pointer.is-active{background-color:#000}#fade-de-switch__inner .pointers{display:none;position:absolute;bottom:15px;left:0;width:100%;text-align:center;z-index:1}#fade-de-switch__inner .item{display:none;position:absolute;top:0;left:0;width:320px;height:380px;color:#fff;background-color:#333}
+#fade-de-switch {
+  position: relative;
+  background: #000;
+}
+
+#fade-de-switch__inner {
+  overflow: hidden;
+  position: relative;
+  width: 320px;
+  height: 380px;
+  margin: 0 auto;
+}
+#fade-de-switch__inner .is-none {
+  display: none !important;
+}
+#fade-de-switch__inner .pointer {
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  width: 12px;
+  height: 12px;
+  margin: 0 6px;
+  background-color: #999;
+  border-radius: 6px;
+  cursor: pointer;
+  line-height: 0;
+  font-size: 0;
+}
+#fade-de-switch__inner .pointer.is-active {
+  background-color: #000;
+}
+#fade-de-switch__inner .pointers {
+  display: none;
+  position: absolute;
+  bottom: 15px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 1;
+}
+#fade-de-switch__inner .item {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 320px;
+  height: 380px;
+  color: #fff;
+  background-color: #333;
+}
